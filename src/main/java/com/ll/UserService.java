@@ -7,6 +7,7 @@ import java.util.Scanner;
 // userName, userId, userPw -> userRepository 내에 저장
 public class UserService {
     Scanner sc;
+    public static ArrayList<UserArticle> userArticles = new ArrayList<>();
 
     UserService(Scanner sc) {
         this.sc = sc;
@@ -14,8 +15,6 @@ public class UserService {
 
     public void createMember() {
         int userNum = 0;
-
-        ArrayList<UserArticle> userArticles = new ArrayList<>();
 
         System.out.println("=== 회원가입 ===");
 

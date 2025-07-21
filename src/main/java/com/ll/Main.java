@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("==원하는 기능을 입력해주세요.==");
+            System.out.println("원하는 기능을 입력해주세요.");
             System.out.println("회원가입, 게시판, 로그인, 로그아웃, 종료");
             System.out.print("입력) ");
             String command = sc.nextLine();
@@ -23,7 +23,7 @@ public class Main {
             } else if (command.equals("회원가입")) {
                 new UserService(sc).createMember(); //회원가입 옵션
             } else if (command.equals("로그인")) {
-                new Login(sc).login();
+                new Login(sc, UserService.userArticles).login();
             }
         } sc.close();
     }

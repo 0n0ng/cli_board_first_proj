@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class App {
     Scanner sc;
+    ArrayList<Article> articles = new ArrayList<>();
 
     App(Scanner sc) {
         this.sc = sc;
@@ -13,8 +14,6 @@ public class App {
 
     public void run() {
         int lastId = 0;
-
-        ArrayList<Article> articles = new ArrayList<>();
 
         System.out.println("==게시판입니다==");
         System.out.println("등록, 목록, 삭제, 수정, 나가기 ");

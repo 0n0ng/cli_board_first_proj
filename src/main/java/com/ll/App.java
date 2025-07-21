@@ -67,7 +67,6 @@ public class App {
                 String[] paramsStr = commandList[1].split("=", 2);
                 System.out.println(paramsStr[1]);
 
-
                 String value = paramsStr[1];
                 int idx = Integer.parseInt(value);
                 Article article = null;
@@ -93,7 +92,7 @@ public class App {
                     article.content = content;
                     System.out.printf("%d번 게시글이 수정되었습니다.\n", idx);
                 }
-        }
+            }
 
         }
 

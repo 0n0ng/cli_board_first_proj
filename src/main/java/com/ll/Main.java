@@ -19,7 +19,7 @@ public class Main {
             }
             if (command.equals("게시판")) {
                 // 아래는 기능별 쪼개서 (App)class만든 뒤 연결시키는 코드.
-                new App(sc).run(); //게시글 남기기 옵션
+                new App(sc, App.articles).run(); //게시글 남기기 옵션
             } else if (command.equals("회원가입")) {
                 new UserService(sc).createMember(); //회원가입 옵션
             } else if (command.equals("로그인")) {

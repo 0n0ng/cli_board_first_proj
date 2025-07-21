@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public class App {
     Scanner sc;
-    ArrayList<Article> articles = new ArrayList<>();
+    static ArrayList<Article> articles = new ArrayList<>();
 
-    App(Scanner sc) {
+    App(Scanner sc , ArrayList<Article> articles) {
         this.sc = sc;
+        this.articles = articles;
     }
 
     public void run() {

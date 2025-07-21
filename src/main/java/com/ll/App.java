@@ -17,13 +17,14 @@ public class App {
         ArrayList<Article> articles = new ArrayList<>();
 
         System.out.println("==게시판입니다==");
+        System.out.println("등록, 목록, 삭제, 수정, 나가기 ");
         while (true) {
-            System.out.print("명령) ");
+            System.out.print("선택해주세요(게시판) : ");
             String command = sc.nextLine();
 
-            if (command.equals("종료")) {
-                break;
-            }
+//            if (command.equals("종료")) {
+//                break;
+//            }
             if (command.equals("등록")) {
                 System.out.print("제목 : ");
                 String title = sc.nextLine();
@@ -38,6 +39,7 @@ public class App {
                 for (Article article : articles) {
                     System.out.printf("%d / 제목 : %s / 내용 : %s/ \n", article.id, article.title, article.content);
                 }
+
                 //startsWith : 삭제라는 말로 시작을 하냐?
             } else if (command.startsWith("삭제")) {
                 // split : ?를 기준으로 2개로 쪼갠다.
@@ -92,10 +94,10 @@ public class App {
                     article.content = content;
                     System.out.printf("%d번 게시글이 수정되었습니다.\n", idx);
                 }
+            }  else if (command.equals("나가기")){
+                break;
             }
-
         }
-
     }
 }
 

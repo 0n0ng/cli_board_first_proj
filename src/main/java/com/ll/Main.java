@@ -24,6 +24,8 @@ public class Main {
                 new UserService(sc).createMember(); //회원가입 옵션
             } else if (command.equals("로그인")) {
                 new Login(sc, UserService.userArticles).login();
+            } else if (command.equals("로그아웃")) {
+                new Logout(sc, UserService.userArticles).logout();
             }
         } sc.close();
     }

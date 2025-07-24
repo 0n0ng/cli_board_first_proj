@@ -1,19 +1,21 @@
-package com.ll;
+package com.ll.controller;
+
+import com.ll.model.Member;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Logout {
-    UserArticle connectedUser;
+    Member connectedUser;
     Scanner sc;
 
-    Logout(Scanner sc, ArrayList<UserArticle> connectedUser) {
+    public Logout(Scanner sc, ArrayList<Member> connectedUser) {
         this.sc = sc;
 //        this.connectedUser = connectedUser;
     }
 
     public void logout() {
-        if (UserService.connectedUser == null) {
+        if (Signup.connectedUser == null) {
             System.out.println("현재 로그인된 사용자가 없습니다.");
             return;
         }

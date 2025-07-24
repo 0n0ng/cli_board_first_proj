@@ -1,16 +1,18 @@
-package com.ll;
+package com.ll.controller;
+
+import com.ll.model.Member;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 // 회원가입에 필요한 것들.
 // userName, userId, userPw -> userRepository 내에 저장
-public class UserService {
+public class Signup {
     Scanner sc;
-    public static ArrayList<UserArticle> connectedUser = new ArrayList<>();
-    public static ArrayList<UserArticle> userArticles = new ArrayList<>();
+    public static ArrayList<Member> connectedUser = new ArrayList<>();
+    public static ArrayList<Member> userArticles = new ArrayList<>();
 
-    UserService(Scanner sc) {
+    public Signup(Scanner sc) {
         this.sc = sc;
     }
 
@@ -32,7 +34,7 @@ public class UserService {
                 String userPw = sc.nextLine();
 
                 userNum++;
-                UserArticle userArticle = new UserArticle(userNum, name, userId, userPw);
+                Member userArticle = new Member(userNum, name, userId, userPw);
                 userArticles.add(userArticle);
                 System.out.println("회원가입이 완료되었습니다.");
             } else if (command.equals("아니오")){
@@ -40,7 +42,7 @@ public class UserService {
             }
 //회원정보 저장됐나 확인용
 //            else if (command.equals("목록")) {
-//                for (UserArticle userArticle : userArticles) {
+//                for (Member userArticle : userArticles) {
 //                    System.out.printf("%d번/ 이름 :%s/ 아이디 :%s/ 비밀번호 :%s \n", userArticle.userNum, userArticle.name, userArticle.userId, userArticle.userPw);
 //                }
 //            }

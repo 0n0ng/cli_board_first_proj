@@ -1,14 +1,26 @@
-package com.ll;
+package com.ll.controller;
 
-import java.sql.SQLOutput;
+import com.ll.db.DBConnection;
+import com.ll.model.Article;
+import com.ll.service.ArticleService;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     Scanner sc;
-    static ArrayList<Article> articles = new ArrayList<>();
+    public static ArrayList<Article> articles = new ArrayList<>() ;
+    ArticleService articleService;
 
-    App(Scanner sc , ArrayList<Article> articles) {
+    public App(Scanner sc , ArrayList<Article> articles) {
+        DBConnection.DB_NAME = "first proj";
+        DBConnection.DB_PORT = 3306;
+        DBConnection.DB_USER = "root";
+        DBConnection.DB_PASSWORD = "";
+
+        DBConnection DBConnection = new DBConnection();
+        DBConnection.connect();
+
         this.sc = sc;
         this.articles = articles;
     }
@@ -18,6 +30,7 @@ public class App {
 
         System.out.println("==게시판입니다==");
         System.out.println("등록, 목록, 삭제, 수정, 나가기 ");
+
         while (true) {
             System.out.print("선택해주세요(게시판) : ");
             String command = sc.nextLine();

@@ -1,6 +1,10 @@
 package com.ll;
 
-import java.util.ArrayList;
+import com.ll.controller.App;
+import com.ll.controller.Login;
+import com.ll.controller.Logout;
+import com.ll.controller.Signup;
+
 import java.util.Scanner;
 
 
@@ -21,11 +25,11 @@ public class Main {
                 // 아래는 기능별 쪼개서 (App)class만든 뒤 연결시키는 코드.
                 new App(sc, App.articles).run(); //게시글 남기기 옵션
             } else if (command.equals("회원가입")) {
-                new UserService(sc).createMember(); //회원가입 옵션
+                new Signup(sc).createMember(); //회원가입 옵션
             } else if (command.equals("로그인")) {
-                new Login(sc, UserService.userArticles).login();
+                new Login(sc, Signup.userArticles, Signup.connectedUser).login();
             } else if (command.equals("로그아웃")) {
-                new Logout(sc, UserService.connectedUser).logout();
+                new Logout(sc, Signup.connectedUser).logout();
             }
         } sc.close();
     }

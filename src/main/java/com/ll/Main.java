@@ -25,7 +25,7 @@ public class Main {
             } else if (command.equals("로그인")) {
                 new Login(sc, UserService.userArticles).login();
             } else if (command.equals("로그아웃")) {
-                new Logout(sc, UserService.userArticles).logout();
+                new Logout(sc, UserService.connectedUser).logout();
             }
         } sc.close();
     }

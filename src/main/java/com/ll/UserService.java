@@ -7,6 +7,7 @@ import java.util.Scanner;
 // userName, userId, userPw -> userRepository 내에 저장
 public class UserService {
     Scanner sc;
+    public static ArrayList<UserArticle> connectedUser = new ArrayList<>();
     public static ArrayList<UserArticle> userArticles = new ArrayList<>();
 
     UserService(Scanner sc) {

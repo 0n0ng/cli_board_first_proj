@@ -12,4 +12,5 @@ public class UserArticle {
         this.userId = userId;
         this.userPw = userPw;
     }
+
 }

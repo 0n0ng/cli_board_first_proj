@@ -1,4 +1,4 @@
-package com.ll.model;
+package com.ll.member;
 
 public class Member {
     public int userNum;
@@ -11,6 +11,19 @@ public class Member {
         this.name = name;
         this.userId = userId;
         this.userPw = userPw;
+    }
+
+    public int getUserNum() {
+        return userNum;
+    }
+    public String getName() {
+        return name;
+    }
+    public String  getUserId() {
+        return userId;
+    }
+    public String  getUserPw() {
+        return userPw;
     }
 
 }

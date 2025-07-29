@@ -2,6 +2,7 @@ package com.ll;
 
 import com.ll.article.ArticleController;
 import com.ll.db.DBConnection;
+import com.ll.member.Member;
 import com.ll.member.MemberController;
 
 import java.util.Scanner;
@@ -53,7 +54,14 @@ public class App {
                     memberController.signup();
                     break;
                 case "로그인":
-                    memberController.login();
+                    // 만약 로그인 되어있는 상태라면?
+                    Member loginedMember = Container.getLoginedMember();
+                    if (loginedMember != null) {
+                        System.out.println("로그아웃 후 이용해주세요.");
+                        break;
+                    } else {
+                        memberController.login();
+                    }
                     break;
                 case "로그아웃":
                     memberController.logout();

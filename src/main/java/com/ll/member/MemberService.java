@@ -9,7 +9,7 @@
 //        member = new Member();
 //    }
 //
-//    public int join (String userId, String password) {
+//    public int signup (String userId, String password) {
 //        return this.member.signup(userId, password);
 //    }
 //

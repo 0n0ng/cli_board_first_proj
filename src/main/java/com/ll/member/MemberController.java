@@ -23,6 +23,9 @@ public class MemberController {
             System.out.print("회원가입 하시겠습니까? 네/아니오 )");
             String command = sc.nextLine();
 
+            if (command.equals("아니오")) {
+                return;
+            }
             if (command.equals(("네"))) {
                 System.out.print("회원님의 이름을 입력해주세요.");
                 String name = sc.nextLine();
@@ -35,9 +38,9 @@ public class MemberController {
                 Member userArticle = new Member(userNum, name, userId, userPw);
                 userArticles.add(userArticle);
                 System.out.println("회원가입이 완료되었습니다.");
-            } else if (command.equals("아니오")) {
-                break;
+                return;
             }
+
         }
 //회원정보 저장됐나 확인용
 //            else if (command.equals("목록")) {
@@ -51,11 +54,11 @@ public class MemberController {
         System.out.println("== 로그인 창 ==");
 
         while (true) {
-            System.out.print("로그인 하시겠습니까? 네/아니오 )");
+            System.out.print("로그인 하시겠습니까? 네/아니오)");
             String command = sc.nextLine();
 
             if (command.equals("아니오")) {
-                break;
+                return;
             }
 
             if (command.equals("네")) {
@@ -64,7 +67,7 @@ public class MemberController {
                 System.out.print("비밀번호 : ");
                 String userPw = sc.nextLine();
 
-                boolean loginSuccess = false;
+//                boolean loginSuccess = false;
 
                 for (Member m : userArticles) {
                     if (m.userId.equals(userId) && m.userPw.equals(userPw)) {
@@ -78,6 +81,7 @@ public class MemberController {
             }
         }
     }
+
     public void logout() {
         Member loginedMember = Container.getLoginedMember();
 
@@ -85,12 +89,13 @@ public class MemberController {
             System.out.println("현재 로그인된 사용자가 없습니다.");
             return;
         }
-        System.out.print("로그아웃 하시겠습니까? 네/아니오 )");
+        System.out.printf("%s님 로그아웃 하시겠습니까?\n", loginedMember.name);
+        System.out.print("네/아니오)");
         String command = sc.nextLine();
 
-            if (command.equals("네")) {
-                System.out.printf("%s 님 로그아웃 되었습니다.\n", loginedMember.name);
-                Container.setLoginedMember(null);
+        if (command.equals("네")) {
+            System.out.printf("%s 님 로그아웃 되었습니다.\n", loginedMember.name);
+            Container.setLoginedMember(null);
         }
     }
 }

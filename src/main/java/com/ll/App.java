@@ -26,8 +26,9 @@ public class App {
     }
 
     public void run() {
-        System.out.println("== 게시판 앱 시작 ==");
-
+        System.out.println("== 원하는 기능을 입력하세요 ==");
+        System.out.println("회원가입, 로그인, 로그아웃");
+        System.out.println("등록, 목록, 삭제, 수정, 종료");
         while (true) {
             System.out.print("입력) ");
             String command = sc.nextLine();
